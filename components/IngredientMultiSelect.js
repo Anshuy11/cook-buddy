@@ -48,7 +48,7 @@ export default function IngredientMultiSelect() {
     
     {/* Dropdown List */}
     {debouncedQuery && (
-      <ul className="absolute z-10 w-full border border-t-0 border-gray-300 max-h-48 overflow-auto rounded-b-md bg-white shadow-md">
+      <ul className="absolute z-10 w-full border border-t-0 border-gray-300 max-h-48 overflow-auto rounded-b-md bg-gray-100 text-black shadow-md">
         {filteredIngredients.length > 0 ? (
           filteredIngredients.map((item) => (
             <li
