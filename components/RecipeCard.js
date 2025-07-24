@@ -1,29 +1,79 @@
-import React from 'react'
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import RecipeModel from "./RecipeModel";
 
-const RecipeCard = () => {
+const RecipeCard = ({ recipe }) => {
+  const [isModal, setIsModal] = useState(false);
+  const [missing, setMissing] = useState([]);
+
   return (
-    <div className='p-6 m-6'>
+    <>
+      <RecipeModel
+        isModal={isModal}
+        setIsModal={setIsModal}
+        missing={missing}
+      />
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-600  shadow-lghover:border-blue-500 hover:ring-2   transition-all duration-300">
+        <img
+          className="w-full h-48 object-cover rounded-t-2xl"
+          src={recipe.image}
+          alt={recipe.title}
+          loading="lazy"
+        />
+        <div className="p-4">
+          <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
+            {recipe.title}
+          </h5>
+          <p className="text-gray-700 dark:text-gray-400 text-sm mb-1">
+            ✅ Used Ingredients:{" "}
+            <span className="font-medium text-blue-600">
+              {recipe.usedIngredientCount}
+            </span>
+          </p>
+    <div>
+            <p className="text-gray-700 dark:text-gray-400 text-sm mb-4 gap-2">
+              ❌ Missed Ingredients:{" "}
+              <span className="font-medium text-red-500">
+                {recipe.missedIngredientCount}
+              </span> {" "} <span
+              onClick={() => {
+                setIsModal(true);
+                setMissing(recipe.missedIngredients);
+              }}
+              className="cursor-pointer text-sm text-white hover:text-gray-400 "
+            >
+              view
+            </span>
+            </p>
+           
+          </div>
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-400 shadow-lghover:border-blue-500 hover:ring-2 hover:ring-blue-300 dark:hover:ring-blue-600 transition-all duration-300
-">
-    <a href="#">
-        <img class="rounded-t-lg" src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            View {"  "}
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-</div>
-</div>
-  )
-}
+          <a
+            href={`/recipe/${recipe.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="inline-flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded hover:from-blue-700 hover:to-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              View
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </a>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default RecipeCard
+export default RecipeCard;

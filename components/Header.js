@@ -15,7 +15,7 @@ const Header = (props) => {
     <div
       className={
         theme === "Light"
-          ? " bg-gradient-to-r   from-[#03148e] via-[#600492] to-[#03148e]   relative  h-[100px] text-white flex  justify-between  "
+          ? " bg-gradient-to-r   from-[#03678e] via-[#600492] to-[#03678e]   relative  h-[100px] text-white flex  justify-between  "
           : "   bg-black  h-[100px] text-white flex  justify-between relative "
       }
     >
@@ -25,16 +25,16 @@ const Header = (props) => {
         <div className="flex justify-start items-start gap-6">
           <div
             onClick={() => router.push("/")}
-            className="text-white  font-semibold sm:text-[14px] text-[12px] md:flex gap-1 cursor-pointer hidden "
+            className="text-white  font-semibold sm:text-[14px] text-[12px] md:flex gap-1 cursor-pointer  "
           >
             <img
-              className="h-[150px] w-[150px] object-contain -mt-2 "
+              className="md:h-[150px] md:w-[150px] h-[100px] w-[100px] object-contain md:-mt-2 mt-4 "
               src="/logo.png"
             />
             
 
           </div>
-          <div className="text-white mt-3  font-semibold sm:text-[14px] text-[12px] flex gap-1 cursor-pointer md:hidden">
+         {/*  <div className="text-white mt-3  font-semibold sm:text-[14px] text-[12px] flex gap-1 cursor-pointer md:hidden">
             
              <MobileSidebar theme={theme} />
               <img
@@ -43,7 +43,7 @@ const Header = (props) => {
               src="/logo.png"
             />
            
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex  items-center pl-3 gap-4">
