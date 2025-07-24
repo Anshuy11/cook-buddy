@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { ThemeColor } from "@/context/ThemeContext";
-import MobileSidebar from "./MobileSidebar";
 
 
 const Header = (props) => {
@@ -34,16 +33,7 @@ const Header = (props) => {
             
 
           </div>
-         {/*  <div className="text-white mt-3  font-semibold sm:text-[14px] text-[12px] flex gap-1 cursor-pointer md:hidden">
-            
-             <MobileSidebar theme={theme} />
-              <img
-               onClick={() => router.push("/")}
-              className="h-[100px] w-[100px] object-contain mt-2 "
-              src="/logo.png"
-            />
-           
-          </div> */}
+
         </div>
       </div>
       <div className="flex  items-center pl-3 gap-4">

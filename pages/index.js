@@ -1,5 +1,5 @@
 "use client";
-
+import Head from "next/head";
 import { useState, useEffect, useCallback } from "react";
 import IngredientMultiSelect from "@/components/IngredientMultiSelect";
 import dynamic from "next/dynamic";
@@ -77,6 +77,42 @@ export default function Home() {
   }, [offset, ingredientsQuery]);
 
   return (
+   <>
+    <Head>
+        <meta charSet="utf-8" />
+
+        <title>{"CookBuddy - Meal Recommendation App"}</title>
+        <meta
+          name="description"
+          content={
+            "CookBuddy is a smart meal planner that recommends recipes, avoids food repetition, and provides nutritional info — perfect for solo eaters and healthy living."
+          }
+        />
+        <link rel="canonical" href="https://cook-buddy.vercel.app/" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <link rel="icon" type="image/png" sizes="32x32" href="headLogo.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="headLogo.png" />
+        <meta
+          property="og:title"
+          content={"CookBuddy - Meal Recommendation App"}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content={
+            "CookBuddy is a smart meal planner that recommends recipes, avoids food repetition, and provides nutritional info — perfect for solo eaters and healthy living."
+          }
+        />
+        <meta name="robots" content="max-image-preview:large"></meta>
+        <meta name="robots" content="NOODP" />
+        <meta property="og:url" content="https://cook-buddy.vercel.app/" />
+        <meta property="og:image" content="headLogo.png" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta property="og:image:width" content="200" />
+        <meta property="og:image:height" content="200" />
+      </Head>
     <div className="p-4">
       <IngredientMultiSelect onSearch={fetchRecipes} />
 
@@ -111,5 +147,6 @@ export default function Home() {
         <p className="text-center text-gray-500 mt-4">No more recipes found.</p>
       )}
     </div>
+    </>
   );
 }

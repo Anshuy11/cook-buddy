@@ -45,7 +45,7 @@ const handleSearch = () => {
   return (
     <div className="mx-auto p-4 w-full">
       <div className="mb-4 relative">
-        <label className="block mb-1 font-medium">Search Ingredients</label>
+        <label className="block mb-1 font-medium">Ingredients</label>
         <input
           type="text"
           className="w-full border border-gray-300 p-2 rounded-md"
