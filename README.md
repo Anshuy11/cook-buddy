@@ -92,9 +92,10 @@ CookBuddy is a smart meal planning application that suggests healthy recipes bas
 - └── README.md
 
 
-🛠️ Getting Started Locally
+## 🛠️ Getting Started Locally
 
--     git clone [https://github.com/Anshuy11/cook-buddy.git](https://github.com/Anshuy11/cook-buddy)
+- git clone
+-     [https://github.com/Anshuy11/cook-buddy.git](https://github.com/Anshuy11/cook-buddy)
 -     cd cook-buddy
 -     npm install
 ## Add environment variables
@@ -106,13 +107,18 @@ CookBuddy is a smart meal planning application that suggests healthy recipes bas
 - NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 - NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 - NEXT_PUBLIC_SPOONACULAR_API_KEY=your_spoonacular_key
+
+- Run Locally
+-     npm run dev
+
+  
   
 
 
 👤 Author
 -  Anshu Yadav
--     🔗 [Portfolio](https://portfolios-dusky.vercel.app/)
--     💼 [LinkedIn](https://www.linkedin.com/in/anshu-yadav-62444a1a0/)
--     🧑‍💻 [GitHub](https://github.com/Anshuy11)
+- 🔗 [Portfolio](https://portfolios-dusky.vercel.app/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/anshu-yadav-62444a1a0/)
+- 🧑‍💻 [GitHub](https://github.com/Anshuy11)
 
 
