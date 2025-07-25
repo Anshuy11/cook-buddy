@@ -45,8 +45,8 @@ CookBuddy is a smart meal planning application that suggests healthy recipes bas
 
 📂 Project Structure
 
-cook-buddy/
-├── components/               # Reusable UI components
+## cook-buddy/
+- ├── components/               # Reusable UI components
 │   ├── TrackableLink.js      # to track links which user click to view recipe
 │   ├── RecipeModal.js        # show missing ingredients
 │   ├── RecipeCard.js         # recipe card
@@ -57,22 +57,22 @@ cook-buddy/
 │   ├── Footer.js
 │   └── Header.js
 │
-├── context/                  # Context API for theming
+- ├── context/                  # Context API for theming
 │   └── ThemeContext.js
 │
-├── firebase/                 # Firebase config and initialization
+- ├── firebase/                 # Firebase config and initialization
 │   └── firebase.js
 │
-├── hooks/                    # Custom React hooks
+- ├── hooks/                    # Custom React hooks
 │   └── useAnonAuth.js        # Hook for Firebase anonymous auth
 │
-├── lib/                      # Utility functions for tracking
+- ├── lib/                      # Utility functions for tracking
 │   ├── saveClick.js
 │   ├── getClicks.js
 │   ├── saveBookmark.js
 │   └── getBookmarks.js
 │
-├── pages/                    # Next.js pages
+- ├── pages/                    # Next.js pages
 │   ├── index.js              # Home page with recipe search
 │   ├── bookmark.js           # User’s bookmarked recipes
 │   ├── _app.js               # App wrapper with global config
@@ -80,23 +80,23 @@ cook-buddy/
 │         ├── SuggestedDish.js
 │   └── recipe/               # Dynamic page for individual recipe details
 │         ├── [id].js 
-├── public/                   # Static assets (images, icons, etc.)
+- ├── public/                   # Static assets (images, icons, etc.)
 │
-├── styles/                   # Tailwind and global CSS
+- ├── styles/                   # Tailwind and global CSS
 │   └── globals.css
 │
-├── .env.local                # Environment variables
-├── tailwind.config.js
-├── postcss.config.mjs
-├── next.config.mjs
-└── README.md
+- ├── .env.local                # Environment variables
+- ├── tailwind.config.js
+- ├── postcss.config.mjs
+- ├── next.config.mjs
+- └── README.md
 
 
 🛠️ Getting Started Locally
 
-- git clone [https://github.com/Anshuy11/cook-buddy.git](https://github.com/Anshuy11/cook-buddy)
-- cd cook-buddy
-- npm install
+-     git clone [https://github.com/Anshuy11/cook-buddy.git](https://github.com/Anshuy11/cook-buddy)
+-     cd cook-buddy
+-     npm install
 ## Add environment variables
 - SPOONACULAR_API_KEY=your_spoonacular_key
 - NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
@@ -110,9 +110,9 @@ cook-buddy/
 
 
 👤 Author
--      Anshu Yadav
-- 🔗 [Portfolio](https://portfolios-dusky.vercel.app/)
-- 💼 [LinkedIn](https://www.linkedin.com/in/anshu-yadav-62444a1a0/)
-- 🧑‍💻 [GitHub](https://github.com/Anshuy11)
+-  Anshu Yadav
+-     🔗 [Portfolio](https://portfolios-dusky.vercel.app/)
+-     💼 [LinkedIn](https://www.linkedin.com/in/anshu-yadav-62444a1a0/)
+-     🧑‍💻 [GitHub](https://github.com/Anshuy11)
 
 
