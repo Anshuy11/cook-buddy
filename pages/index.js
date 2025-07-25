@@ -75,17 +75,16 @@ export default function Home() {
 
     setLoading(false);
   }, [offset, ingredientsQuery]);
-
   return (
-   <>
-    <Head>
+    <>
+      <Head>
         <meta charSet="utf-8" />
 
         <title>{"CookBuddy - Meal Recommendation App"}</title>
         <meta
           name="description"
           content={
-            "CookBuddy is a smart meal planner that recommends recipes, avoids food repetition, and provides nutritional info — perfect for solo eaters and healthy living."
+            "CookBuddy is a smart meal planner that recommends recipes, shows bookmark recipes, and provides nutritional info — perfect for solo eaters and healthy living."
           }
         />
         <link rel="canonical" href="https://cook-buddy.vercel.app/" />
@@ -113,10 +112,11 @@ export default function Home() {
         <meta property="og:image:width" content="200" />
         <meta property="og:image:height" content="200" />
       </Head>
+    
     <div className="p-4">
       <IngredientMultiSelect onSearch={fetchRecipes} />
 
-      {recipes.length === 0 && !loading && ingredientsQuery.length !=0 && (
+      {recipes.length === 0 && !loading && ingredientsQuery && (
         <p className="text-center text-gray-500 mt-6">No recipes found for selected ingredients.</p>
       )}
 

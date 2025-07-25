@@ -12,7 +12,7 @@ const RecipeModel = (props) => {
     <Transition.Root show={props.isModal} as={Fragment} className="p-2 m-2 ">
       <Dialog
         as="div"
-        className="relative z-20 sm:block"
+        className="relative z-[999] sm:block"
         initialFocus={cancelButtonRef}
         onClose={() => {
           props.setIsModal(false);

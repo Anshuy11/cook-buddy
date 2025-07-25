@@ -1,21 +1,20 @@
 import { useContext, useState } from "react";
 import { ThemeColor } from "@/context/ThemeContext";
+import { useRouter } from "next/router";
 
 
 const Header = (props) => {
-  const [userOpen, setUserOpen] = useState(false);
-  const [signupLoginopen, setSignupLoginopen] = useState(false);
-  const [openConfirmModal, setOpenConfirmModal] = useState(false);
+ 
   const { theme, ToggleFunc } = useContext(ThemeColor);
 
-
+  const router = useRouter(null)
 
   return (
     <div
       className={
         theme === "Light"
-          ? " bg-gradient-to-r   from-[#03678e] via-[#600492] to-[#03678e]   relative  h-[100px] text-white flex  justify-between  "
-          : "   bg-black  h-[100px] text-white flex  justify-between relative "
+          ? " bg-gradient-to-r   from-[#03678e] via-[#600492] to-[#03678e]   sticky top-0 z-50  h-[100px] text-white flex  justify-between  "
+          : "   bg-black  h-[100px] text-white flex  justify-between sticky top-0 z-50 "
       }
     >
      
@@ -27,13 +26,13 @@ const Header = (props) => {
             className="text-white  font-semibold sm:text-[14px] text-[12px] md:flex gap-1 cursor-pointer  "
           >
             <img
-              className="md:h-[150px] md:w-[150px] h-[100px] w-[100px] object-contain md:-mt-2 mt-4 "
+              className="md:h-[150px] md:w-[150px] h-[100px] w-[100px] mt-5 object-contain md:-mt-2 "
               src="/logo.png"
             />
             
 
           </div>
-
+        
         </div>
       </div>
       <div className="flex  items-center pl-3 gap-4">
