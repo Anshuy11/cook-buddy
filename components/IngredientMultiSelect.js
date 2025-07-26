@@ -5,7 +5,7 @@ export default function IngredientMultiSelect({onSearch}) {
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [selected, setSelected] = useState([]);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true);
 const isThrottledRef = useRef(false);
   // Debounce logic
   useEffect(() => {
@@ -40,8 +40,11 @@ const handleSearch = () => {
   onSearch(query);
 
   setIsDisabled(true);
-  setTimeout(() => setIsDisabled(false), 5000);
+ // setTimeout(() => setIsDisabled(false), 5000);
 };
+useEffect(()=>{
+  setIsDisabled(false);
+},[selected])
 
 
   return (
