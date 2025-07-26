@@ -26,8 +26,6 @@ CookBuddy is a smart meal planning application that suggests healthy recipes bas
 
 - 📊 Nutritional Info – View calories and other nutrient breakdowns.
 
-- 🌓 Theme toggle with Context API
-
 - 📱 Fully responsive and performance-optimized
 
 - 🧾 Recently viewed & bookmarked recipes
@@ -56,9 +54,6 @@ CookBuddy is a smart meal planning application that suggests healthy recipes bas
 │   ├── IngredientList.js     # jsaon for ingredients
 │   ├── Footer.js
 │   └── Header.js
-│
-- ├── context/                  # Context API for theming
-│   └── ThemeContext.js
 │
 - ├── firebase/                 # Firebase config and initialization
 │   └── firebase.js
