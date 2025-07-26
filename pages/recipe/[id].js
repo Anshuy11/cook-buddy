@@ -15,7 +15,7 @@ export default function RecipeDetail({ recipe }) {
         <meta
           name="description"
           content={
-            "CookBuddy is a smart meal planner that recommends recipes, shows bookmark recipes, and provides nutritional info — perfect for solo eaters and healthy living."
+            "CookBuddy is a smart meal planner that recommends recipes, shows bookmark recipes, and provides nutritional info — perfect for healthy living."
           }
         />
         <link rel="canonical" href="https://cook-buddy.vercel.app/" />
@@ -31,7 +31,7 @@ export default function RecipeDetail({ recipe }) {
         <meta
           property="og:description"
           content={
-            "CookBuddy is a smart meal planner that recommends recipes, avoids food repetition, and provides nutritional info — perfect for solo eaters and healthy living."
+            "CookBuddy is a smart meal planner that recommends recipes, shows bookmark recipes, and provides nutritional info — perfect for healthy living."
           }
         />
         <meta name="robots" content="max-image-preview:large"></meta>
