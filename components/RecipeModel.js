@@ -30,7 +30,7 @@ const RecipeModel = (props) => {
           <div className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-20 ">
+        <div className="fixed inset-0 z-[999] ">
           <div className="flex items-center justify-center p-2 m-2">
             <Transition.Child
               as={Fragment}
