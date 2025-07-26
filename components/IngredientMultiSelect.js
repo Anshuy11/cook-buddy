@@ -40,6 +40,7 @@ const handleSearch = () => {
   onSearch(query);
 
   setIsDisabled(true);
+ 
  // setTimeout(() => setIsDisabled(false), 5000);
 };
 useEffect(()=>{

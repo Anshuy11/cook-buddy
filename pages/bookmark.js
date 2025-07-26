@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { getBookmarks } from "../lib/getBookmarks";
 import useAnonAuth from "../hooks/useAnonAuth";
-import {  removeBookmark, saveBookmark } from "../lib/saveBookmark";
+import { removeBookmark, saveBookmark } from "../lib/saveBookmark";
 import RecipeCard from "@/components/RecipeCard";
+import Loader from "@/components/Loader";
 
 const BookmarksPage = () => {
   const [bookmarks, setBookmarks] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
   const { user } = useAnonAuth();
 
@@ -18,38 +20,16 @@ const BookmarksPage = () => {
 
         const ids = new Set(data.map((r) => r.id));
         setBookmarkedIds(ids);
+        setLoading(false);
       }
     };
 
     fetchBookmarks();
   }, [user]);
 
-  const handleBookmark = async (bookmark) => {
-    if (!user) return;
-
-    const isMarked = bookmarkedIds.has(bookmark.id);
-
-    if (isMarked) {
-      await removeBookmark(user.uid, bookmark.id);
-      setBookmarkedIds((prev) => {
-        const newSet = new Set(prev);
-        newSet.delete(bookmark.id);
-        return newSet;
-      });
-      setBookmarks((prev) => prev.filter((b) => b.id !== bookmark.id));
-    } else {
-      await saveBookmark(user.uid, bookmark);
-      setBookmarkedIds((prev) => new Set(prev).add(bookmark.id));
-    }
-  };
-   const handleClick = async (bookmark) => {
-    if (user) {
-      await saveClickedLink(user.uid, `/recipe/${bookmark.id}`);
-    }
-  };
   return (
-   <>
-   <Head>
+    <>
+      <Head>
         <meta charSet="utf-8" />
 
         <title>{"CookBuddy - Meal Recommendation App"}</title>
@@ -84,22 +64,31 @@ const BookmarksPage = () => {
         <meta property="og:image:width" content="200" />
         <meta property="og:image:height" content="200" />
       </Head>
-   <div className="p-6">
-      <h2 className="lg:text-2xl text-lg text-center font-bold mb-4">
-        Your Bookmarked Recipes
-      </h2>
-
-      {bookmarks.length === 0 ? (
-        <p className="text-center">No bookmarks yet.</p>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6">
-          {bookmarks.map((bookmark) => (
-             <RecipeCard key={bookmark.id} recipe={bookmark} viewIngradient ={false} />
-          ))}
-        </div>
-      )}
-    </div>
-     </>
+      <div className="p-6">
+        <h2 className="lg:text-2xl text-lg text-center font-bold mb-4">
+          Your Bookmarked Recipes
+        </h2>
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {bookmarks.length === 0 ? (
+              <p className="text-center">No bookmarks yet.</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6">
+                {bookmarks.map((bookmark) => (
+                  <RecipeCard
+                    key={bookmark.id}
+                    recipe={bookmark}
+                    viewIngradient={false}
+                  />
+                ))}
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
