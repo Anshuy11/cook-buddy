@@ -1,6 +1,6 @@
 ## 🍽️ CookBuddy – Smart Meal Recommendation App (https://cook-buddy.vercel.app/)
 
-CookBuddy is a smart meal planning application that suggests healthy recipes based on user-provided ingredients. It uses Firebase Anonymous Authentication to track users without sign-up friction and fetches nutritional information and meal ideas from the Spoonacular API.
+CookBuddy is a smart meal planning app that recommends personalized, healthy recipes based on user-selected ingredients. It uses Firebase Anonymous Authentication for seamless user tracking without sign-up friction, and leverages the Spoonacular API to fetch ingredient-based recipes along with detailed nutritional information. It also tracks recipe history and supports bookmarking for better meal planning.
 
 
 ## ⚙️ Tech Stack
