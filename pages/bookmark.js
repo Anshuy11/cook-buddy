@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { getBookmarks } from "../lib/getBookmarks";
 import useAnonAuth from "../hooks/useAnonAuth";
-import { removeBookmark, saveBookmark } from "../lib/saveBookmark";
-import RecipeCard from "@/components/RecipeCard";
 import Loader from "@/components/Loader";
-
+import dynamic from "next/dynamic";
+import CardSkeleton from "@/components/CardSkeleton";
+const RecipeCard = dynamic(() => import("@/components/RecipeCard"), {
+  loading: () => <CardSkeleton />,
+});
 const BookmarksPage = () => {
   const [bookmarks, setBookmarks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [bookmarkedIds, setBookmarkedIds] = useState(new Set());
   const { user } = useAnonAuth();
 
   useEffect(() => {
@@ -19,7 +20,6 @@ const BookmarksPage = () => {
         setBookmarks(data);
 
         const ids = new Set(data.map((r) => r.id));
-        setBookmarkedIds(ids);
         setLoading(false);
       }
     };
