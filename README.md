@@ -90,7 +90,7 @@ CookBuddy is a smart meal planning app that recommends personalized, healthy rec
 ## 🛠️ Getting Started Locally
 
 - git clone
--     [https://github.com/Anshuy11/cook-buddy.git](https://github.com/Anshuy11/cook-buddy)
+-     https://github.com/Anshuy11/cook-buddy
 -     cd cook-buddy
 -     npm install
 ## Add environment variables
