@@ -113,7 +113,7 @@ export default function Home() {
           <Loader />
         ) : (recipes.length > 0 && !loading && ingredientsQuery) ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6">
-            {recipes.map((recipe) => (
+            {recipes.map((recipe) => ( 
               <RecipeCard
                 key={recipe.id}
                 recipe={recipe}
@@ -122,7 +122,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <p className="text-center text-gray-500 mt-6">
+         ingredientsQuery !="" && <p className="text-center text-gray-500 mt-6">
             No recipes found for selected ingredients.
           </p>
         )}
