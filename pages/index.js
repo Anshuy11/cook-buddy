@@ -72,21 +72,27 @@ export default function Home() {
       <Head>
         <meta charSet="utf-8" />
 
-        <title>{"CookBuddy - Meal Recommendation App"}</title>
+        <title>
+          {
+            "CookBuddy - Meal Recommendation App"
+          }
+        </title>
         <meta
           name="description"
           content={
             "CookBuddy is a smart meal planner that recommends recipes, shows bookmark recipes, and provides nutritional info — perfect for healthy living."
           }
         />
-        <link rel="canonical" href="https://cook-buddy.vercel.app/" />
+        <link rel="canonical" href="https://portfolios-dusky.vercel.app/" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-        <link rel="icon" type="image/png" sizes="32x32" href="headLogo.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="headLogo.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
         <meta
           property="og:title"
-          content={"CookBuddy - Meal Recommendation App"}
+          content={
+            "CookBuddy - Meal Recommendation App"
+          }
         />
         <meta property="og:type" content="website" />
         <meta
@@ -97,8 +103,11 @@ export default function Home() {
         />
         <meta name="robots" content="max-image-preview:large"></meta>
         <meta name="robots" content="NOODP" />
-        <meta property="og:url" content="https://cook-buddy.vercel.app/" />
-        <meta property="og:image" content="headLogo.png" />
+        <meta
+          property="og:url"
+          content="https://portfolios-dusky.vercel.app/"
+        />
+        <meta property="og:image" content="favicon.ico" />
 
         <meta name="mobile-web-app-capable" content="yes" />
         <meta property="og:image:width" content="200" />
