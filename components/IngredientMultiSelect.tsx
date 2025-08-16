@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import ingredients from "./IngredientList"; // This should be an array of { id, name, category }
+import {Ingradients, IngredientMultiSelectProps } from "@/types/ingredient";
 
-export default function IngredientMultiSelect({onSearch}) {
-  const [query, setQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState("");
-  const [selected, setSelected] = useState([]);
-  const [isDisabled, setIsDisabled] = useState(true);
-const isThrottledRef = useRef(false);
+export default function IngredientMultiSelect({onSearch}:IngredientMultiSelectProps) {
+  const [query, setQuery] = useState<string>("");
+  const [debouncedQuery, setDebouncedQuery] = useState<string>("");
+  const [selected, setSelected] = useState<Ingradients[]>([]);
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
+const isThrottledRef = useRef<boolean>(false);
   // Debounce logic
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,18 +17,18 @@ const isThrottledRef = useRef(false);
   }, [query]);
 
   const filteredIngredients = ingredients.filter(
-    (item) =>
+    (item: Ingradients) =>
       item.name.toLowerCase().includes(debouncedQuery.toLowerCase()) &&
       !selected.some((sel) => sel.id === item.id)
   );
 
-  const handleSelect = (item) => {
+  const handleSelect = (item:Ingradients) => {
     setSelected([...selected, item]);
     setQuery("");
     setDebouncedQuery("");
   };
 
-  const handleRemove = (id) => {
+  const handleRemove = (id:number) => {
     setSelected(selected.filter((item) => item.id !== id));
   };
 const handleSearch = () => {
@@ -56,7 +57,7 @@ useEffect(()=>{
           type="text"
           className="w-full border border-gray-300 p-2 rounded-md"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
           placeholder="Type to search..."
         />
 
@@ -93,7 +94,7 @@ useEffect(()=>{
                 {item.name}
                 <button
                   className="ml-2 text-sm text-red-500 hover:text-red-800 cursor-pointer"
-                  onClick={() => handleRemove(item.id)}
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleRemove(item.id)}
                 >
                   &times;
                 </button>

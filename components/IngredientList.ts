@@ -1,4 +1,6 @@
-const IngradientList =[
+import { Ingradients } from "@/types/ingredient";
+
+const IngradientList: Ingradients[] =[
   { "id": 1, "name": "Onion", "category": "vegetables" },
   { "id": 2, "name": "Tomato", "category": "vegetables" },
   { "id": 3, "name": "Garlic", "category": "vegetables" },
