@@ -2,8 +2,8 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const Header = (props) => {
-  const router = useRouter(null);
+const Header = () => {
+  const router = useRouter();
 
   return (
     <div className=" bg-gradient-to-r   from-[#03678e] via-[#600492] to-[#03678e]   sticky top-0 z-50  h-[100px] text-white flex  justify-between  ">
@@ -33,7 +33,7 @@ const Header = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="white"
-            class="size-6"
+            className="size-6"
           >
             <path
               fill-rule="evenodd"
