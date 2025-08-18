@@ -45,27 +45,27 @@ CookBuddy is a smart meal planning app that recommends personalized, healthy rec
 
 ## cook-buddy/
 - ├── components/               # Reusable UI components
-│   ├── TrackableLink.js      # to track links which user click to view recipe
-│   ├── RecipeModal.js        # show missing ingredients
-│   ├── RecipeCard.js         # recipe card
-│   ├── Loader.js
-│   ├── Layout.js
-│   ├── IngredientMultiSelect.js   # multiple select ingredients
-│   ├── IngredientList.js     # jsaon for ingredients
-│   ├── Footer.js
-│   └── Header.js
+│   ├── TrackableLink.tsx      # to track links which user click to view recipe
+│   ├── RecipeModal.tsx        # show missing ingredients
+│   ├── RecipeCard.tsx         # recipe card
+│   ├── Loader.tsx
+│   ├── Layout.tsx
+│   ├── IngredientMultiSelect.tsx   # multiple select ingredients
+│   ├── IngredientList.tsx     # jsaon for ingredients
+│   ├── Footer.tsx
+│   └── Header.tsx
 │
 - ├── firebase/                 # Firebase config and initialization
 │   └── firebase.js
 │
 - ├── hooks/                    # Custom React hooks
-│   └── useAnonAuth.js        # Hook for Firebase anonymous auth
+│   └── useAnonAuth.ts        # Hook for Firebase anonymous auth
 │
 - ├── lib/                      # Utility functions for tracking
-│   ├── saveClick.js
-│   ├── getClicks.js
-│   ├── saveBookmark.js
-│   └── getBookmarks.js
+│   ├── saveClick.ts
+│   ├── getClicks.ts
+│   ├── saveBookmark.ts
+│   └── getBookmarks.ts
 │
 - ├── pages/                    # Next.js pages
 │   ├── index.js              # Home page with recipe search
@@ -79,6 +79,10 @@ CookBuddy is a smart meal planning app that recommends personalized, healthy rec
 │
 - ├── styles/                   # Tailwind and global CSS
 │   └── globals.css
+- ├── types/                    # Defining types 
+│   ├── ClickedLink.ts           
+│   ├── Recipe.ts
+│   ├── ingredient.ts
 │
 - ├── .env.local                # Environment variables
 - ├── tailwind.config.js
@@ -115,5 +119,6 @@ CookBuddy is a smart meal planning app that recommends personalized, healthy rec
 - 🔗 [Portfolio](https://portfolios-dusky.vercel.app/)
 - 💼 [LinkedIn](https://www.linkedin.com/in/anshu-yadav-62444a1a0/)
 - 🧑‍💻 [GitHub](https://github.com/Anshuy11)
+
 
 
