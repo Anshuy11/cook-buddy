@@ -15,20 +15,18 @@ function TrackableLink({
   viewed = false,
   onClick,
 }: TrackableLinkProps) {
-  const handleClick = async (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    e.preventDefault(); // Prevent default so you can handle saving first
+
+  const handleClick = () => {
     if (onClick) {
-      await onClick(href); // Call parent handler
+      onClick(href); //  Open link in new tab after saving click
     }
-    // Open link in new tab after saving click
-    window.open(href, "_blank", "noopener,noreferrer");
   };
 
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       onClick={handleClick}
       className={`inline-flex items-center gap-2 px-4 py-2 text-sm rounded ${
         viewed
@@ -37,19 +35,6 @@ function TrackableLink({
       } ${className}`}
     >
       {children ?? (viewed ? "View Again" : "View")}
-      <svg
-        className="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17 8l4 4m0 0l-4 4m4-4H3"
-        />
-      </svg>
     </a>
   );
 }
